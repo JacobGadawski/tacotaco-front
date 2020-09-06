@@ -18,12 +18,11 @@
         >
           <v-icon>mdi-application</v-icon>
         </v-btn> -->
-        <v-btn
-          icon
-          @click.stop="fixed = !fixed"
-        >
-          <v-icon>mdi-minus</v-icon>
-        </v-btn>
+        <div class="logo">
+          <img src="~/assets/img/logo.png" alt="" />
+        </div>
+        <v-spacer></v-spacer>
+        <AdminNavList />
         <v-spacer></v-spacer>
         <v-btn tile outlined @click.stop="emit('rightDrawer')" class="rounded ma-2 account pa-4" large style="text-transform: initial;" >
                 <img src="~/assets/img/person.svg" alt="" /> My account
@@ -31,37 +30,31 @@
       </v-app-bar>
 </template>
 <script>
+import AdminNavList from "@/components/layout/navigation/AdminNavList"
 export default {
-    data(){
+  components: {
+    AdminNavList
+  },
+  data(){
         return {
             clipped: false,
             drawer: false,
             fixed: false,
-            items:  [
-                {
-                icon: 'mdi-apps',
-                title: 'Welcome',
-                to: '/'
-                },
-                {
-                icon: 'mdi-chart-bubble',
-                title: 'Inspire',
-                to: '/inspire'
-                }
-            ],
             miniVariant: false,
             right: true,
             rightDrawer: false,
             title: 'Vuetify.js'
         }
     },
+    computed: {
+      userType(){
+        return this.$store.getters["user/getType"]
+      }
+    },
     methods: {
         emit( event, data ){
             this.$emit( event, data )        
         }
-    },
-    mounted(){
-      console.log( this.$store.user )
     }
 }
 </script>
