@@ -1,22 +1,16 @@
 <template>
     <v-stepper v-model="loginStep" class="login-stepper">
-  
         <v-stepper-items>
             <v-stepper-content step="1">
-                <v-card
-                    color="rgba(255,255,255, 0.9)"
-                    class="rounded-xl"
-                >
-                    <v-card-title class="justify-center">
-                        <span v-if="!submitting">Login to your TacoTaco App</span>
-                    </v-card-title>
-                    <v-card-text>
-                    <LoginForm @submit="submitLogin" />
-                    </v-card-text>
-                </v-card>
+              <SelectLoginType @loginType="handleLoginType" />
             </v-stepper-content>
-    
             <v-stepper-content step="2">
+                <StudentForm @submit="submitLogin"  v-if="loginType === 'student'"/>
+                <TeacherForm @submit="submitLogin"  v-if="loginType === 'teacher'"/>
+                <AdminForm @submit="submitLogin"  v-if="loginType === 'admin'"/>
+            </v-stepper-content>
+
+            <v-stepper-content step="3">
                 <v-card
                     color="rgba(255,255,255, 0.9)"
                     class="rounded-xl"
@@ -39,22 +33,29 @@
     </v-stepper>
 </template>
 <script>
-import LoginForm from "@/components/auth/LoginForm"
+import SelectLoginType from "@/components/auth/steps/SelectType"
+import StudentForm from "@/components/auth/forms/StudentForm"
+import TeacherForm from "@/components/auth/forms/TeacherForm"
+import AdminForm from "@/components/auth/forms/AdminForm"
 export default {
     data(){
         return {
             submitting: false,
             loggedIn: false,
+            loginType: null,
             loginStep: 1
         }
     },
     components: {
-        LoginForm
+        SelectLoginType,
+        StudentForm,
+        TeacherForm,
+        AdminForm
     },
     methods: {
         submitLogin( { email } ){
             console.log("Card event handler email: ", email)
-            this.loginStep++;            
+            this.loginStep++;
             this.submitting = !this.submitting
             setTimeout( () => {
                 this.submitting = !this.submitting
@@ -62,6 +63,11 @@ export default {
                     this.$router.push({ name: "index" })
                 }, 2000 )
             }, 2000)
+        },
+        handleLoginType( type ){
+          console.log(`Continue as ${type}`)
+          this.loginType = type
+          this.loginStep = 2
         }
     }
 }

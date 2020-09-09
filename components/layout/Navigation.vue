@@ -53,7 +53,7 @@ export default {
     },
     methods: {
         emit( event, data ){
-            this.$emit( event, data )        
+            this.$emit( event, data )
         }
     }
 }

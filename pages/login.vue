@@ -11,7 +11,9 @@
           <v-col
             cols="12"
             sm="8"
-            md="5"
+            md="4"
+            lg="4"
+            xl="3"
           >
           <LoginCard />
           </v-col>
