@@ -1,7 +1,7 @@
 export const state = () => ({
-    type: "admin"
+    type: "teacher"
   })
-  
+
 export const mutations = {
     setType(state, type) {
         state.type = type

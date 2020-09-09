@@ -1,6 +1,13 @@
 <template>
   <v-list>
       <v-list-item-group v-model="item" color="primary" class="d-flex">
+        <v-list-item>
+          <v-list-content>
+            <v-btn text :to="{ name: 'index' }">
+              <v-icon>mdi-home-variant-outline</v-icon>
+            </v-btn>
+          </v-list-content>
+        </v-list-item>
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
@@ -20,10 +27,10 @@ export default {
     data(){
         return {
             items: [
-                { text: "Actions", to: { name: "actions" } },
-                { text: "Statistics", to: { name: "statistics" }, disabled: true },
-                { text: "Users", to: { name: "users" }, disabled: true },
-                { text: "SupportTicket", to: { name: "support_ticket" }, disabled: true }
+                { text: "Quizzes", to: { name: "actions" } },
+                { text: "Homework", to: { name: "statistics" }, disabled: true },
+                { text: "TimeTable", to: { name: "users" }, disabled: true },
+                { text: "Grades", to: { name: "support_ticket" }, disabled: true }
             ]
         }
     }

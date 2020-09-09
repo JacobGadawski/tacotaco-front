@@ -22,7 +22,9 @@
           <img src="~/assets/img/logo.png" alt="" />
         </div>
         <v-spacer></v-spacer>
-        <AdminNavList />
+        <AdminNavList v-if="userType === 'admin'"/>
+        <!-- <StudentNavList v-else-if="userType === 'student'"> -->
+        <TeacherNavList v-else />
         <v-spacer></v-spacer>
         <v-btn tile outlined @click.stop="emit('rightDrawer')" class="rounded ma-2 account pa-4" large style="text-transform: initial;" >
                 <img src="~/assets/img/person.svg" alt="" /> My account
@@ -31,9 +33,14 @@
 </template>
 <script>
 import AdminNavList from "@/components/layout/navigation/AdminNavList"
+import StudentNavList from "@/components/layout/navigation/StudentNavList"
+import TeacherNavList from "@/components/layout/navigation/TeacherNavList"
+
 export default {
   components: {
-    AdminNavList
+    AdminNavList,
+    StudentNavList,
+    TeacherNavList
   },
   data(){
         return {
@@ -74,3 +81,4 @@ export default {
         margin-right: 10px;
     }
 </style>
+""
