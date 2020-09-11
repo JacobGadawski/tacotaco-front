@@ -31,6 +31,7 @@ export default {
   ** Global CSS
   */
   css: [
+    'vue-slick-carousel/dist/vue-slick-carousel.css',
     '@/assets/scss/main.scss'
   ],
   /*
@@ -38,6 +39,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    { src: './plugins/slick-carousel.js' }
   ],
   /*
   ** Auto import components

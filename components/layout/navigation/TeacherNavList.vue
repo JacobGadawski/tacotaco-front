@@ -26,12 +26,13 @@
 export default {
     data(){
         return {
-            items: [
-                { text: "Quizzes", to: { name: "actions" } },
-                { text: "Homework", to: { name: "statistics" }, disabled: true },
-                { text: "TimeTable", to: { name: "users" }, disabled: true },
-                { text: "Grades", to: { name: "support_ticket" }, disabled: true }
-            ]
+          item: 1,
+          items: [
+              { text: "Quizzes", to: { name: "quizes" } },
+              { text: "Homework", to: { name: "statistics" }, disabled: true },
+              { text: "TimeTable", to: { name: "users" }, disabled: true },
+              { text: "Grades", to: { name: "support_ticket" }, disabled: true }
+          ]
         }
     }
 }
