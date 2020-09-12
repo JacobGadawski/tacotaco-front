@@ -1,6 +1,6 @@
 <template>
     <VueSlickCarousel v-bind="slickOptions">
-      <Quiz v-for="( quiz,i) in quzies" :key="i" :quiz="quiz" :number="i" />
+      <Quiz v-for="( quiz,i) in quizes" :key="i" :quiz="quiz" :number="i" />
     </VueSlickCarousel>
 </template>
 <script>
@@ -14,13 +14,6 @@ export default {
     },
     components: {
         Quiz
-    },
-    props: {
-        quizes: {
-            type: Array,
-            required: true,
-            default: []
-        }
     },
     data(){
         return {

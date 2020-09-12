@@ -9,7 +9,7 @@ export const mutations = {
 }
 
 export const getters = {
-    getType: (state) => {
+    type: (state) => {
       return state.type
     }
 }

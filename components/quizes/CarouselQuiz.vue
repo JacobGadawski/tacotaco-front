@@ -3,6 +3,9 @@
         <div class="quiz-header pr-1 pl-1 d-flex">
             <h3 class="text-center">Quiz {{number}}</h3>
         </div>
+        <div class="quiz-content">
+            <p>{{quiz.question}}</p>
+        </div>
     </div>
 </template>
 <script>

@@ -5,19 +5,6 @@
         app
         :height="80"
       >
-        <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer" /> -->
-        <!-- <v-btn
-          icon
-          @click.stop="miniVariant = !miniVariant"
-        >
-          <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-        </v-btn> -->
-        <!-- <v-btn
-          icon
-          @click.stop="clipped = !clipped"
-        >
-          <v-icon>mdi-application</v-icon>
-        </v-btn> -->
         <div class="logo">
           <img src="~/assets/img/logo.png" alt="" />
         </div>
@@ -26,7 +13,7 @@
         <!-- <StudentNavList v-else-if="userType === 'student'"> -->
         <TeacherNavList v-else />
         <v-spacer></v-spacer>
-        <v-btn tile outlined @click.stop="emit('rightDrawer')" class="rounded ma-2 account pa-4" large style="text-transform: initial;" >
+        <v-btn tile outlined @click.stop="emit('rightDrawer')" class="rounded account" large style="text-transform: initial;" >
                 <img src="~/assets/img/person.svg" alt="" /> My account
         </v-btn>
       </v-app-bar>
@@ -55,7 +42,7 @@ export default {
     },
     computed: {
       userType(){
-        return this.$store.getters["user/getType"]
+        return this.$store.getters["user/type"]
       }
     },
     methods: {

@@ -1,20 +1,18 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col :cols=12 md="3" style="background: red;">
-
-      </v-col>
-      <v-col :cols=12 md="6" style="background: green;">
-
-      </v-col>
-      <v-col :cols=12 md="3" style="background: pink;">
-
-      </v-col>
-    </v-row>
-  </v-container>
+  <TeacherDashboard />
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import TeacherDashboard from "@/components/dashboards/Teacher"
 export default {
+  components: {
+    TeacherDashboard
+  },
+  computed: {
+    ...mapGetters({
+      userType: 'user/type'
+    })
+  }
 }
 </script>

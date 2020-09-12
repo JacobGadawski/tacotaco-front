@@ -39,7 +39,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    { src: './plugins/slick-carousel.js' }
+    { src: './plugins/slick-carousel.js', ssr: false }
   ],
   /*
   ** Auto import components

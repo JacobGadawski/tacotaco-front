@@ -3,7 +3,9 @@
       <Navigation  @rightDrawer="rightDrawer = !rightDrawer"/>
       <v-main>
         <v-container>
-          <nuxt />
+          <transition name="fade">
+            <nuxt />
+          </transition>
         </v-container>
       </v-main>
       <AccountDrawer :rightDrawer="rightDrawer"/>

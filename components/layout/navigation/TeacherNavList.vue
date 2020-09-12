@@ -2,11 +2,11 @@
   <v-list>
       <v-list-item-group v-model="item" color="primary" class="d-flex">
         <v-list-item>
-          <v-list-content>
+          <v-list-item-content>
             <v-btn text :to="{ name: 'index' }">
               <v-icon>mdi-home-variant-outline</v-icon>
             </v-btn>
-          </v-list-content>
+          </v-list-item-content>
         </v-list-item>
         <v-list-item
           v-for="(item, i) in items"
