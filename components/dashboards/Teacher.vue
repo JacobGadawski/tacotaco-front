@@ -7,7 +7,7 @@
             <v-col :cols=12 md="6">
                 <CenterSide />
             </v-col>
-            <v-col :cols=12 md="3" style="background: pink;">
+            <v-col :cols=12 md="3">
                 <RightSide />
             </v-col>
         </v-row>

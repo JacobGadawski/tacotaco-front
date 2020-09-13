@@ -1,6 +1,6 @@
 <template>
     <VueSlickCarousel v-bind="slickOptions">
-      <Quiz v-for="( quiz,i) in quizes" :key="i" :quiz="quiz" :number="i" />
+      <Quiz v-for="( quiz,i) in quizes" :key="i" :quiz="quiz" :number="i + 1" />
     </VueSlickCarousel>
 </template>
 <script>
@@ -19,6 +19,7 @@ export default {
         return {
             slickOptions: {
                 slidesToShow: 4,
+                stagePadding: 50,
                 arrows: true
             }
       }

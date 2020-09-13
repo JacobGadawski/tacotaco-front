@@ -1,11 +1,10 @@
 <template>
-  <v-list>
+  <v-list elevation="0" flat color="transparent">
       <v-list-item-group v-model="item" color="primary" class="d-flex">
-        <v-list-item>
+        <v-list-item :to="{ name: 'index' }" exact>
           <v-list-item-content>
-            <v-btn text :to="{ name: 'index' }">
               <v-icon>mdi-home-variant-outline</v-icon>
-            </v-btn>
+            <!-- </v-btn> -->
           </v-list-item-content>
         </v-list-item>
         <v-list-item
@@ -14,6 +13,7 @@
           :to="item.to"
           :nuxt="true"
           exact
+          :disabled="item.disabled"
         >
           <v-list-item-content>
             <v-list-item-title v-text="item.text"></v-list-item-title>

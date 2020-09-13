@@ -16,9 +16,7 @@ export default {
                         { value: '1/5', correct: false },
                         { value: '2.33', correct: false },
                         { value: '3.25', correct: false },
-                        { value: '1/3', correct: false },
-                        { value: '1.75', correct: false },
-                        { value: '2', correct: true },
+                        { value: '1/3', correct: false }
                     ]
                 },
                 {
@@ -27,9 +25,7 @@ export default {
                         { value: '1/5', correct: true },
                         { value: '2.33', correct: false },
                         { value: '3.25', correct: false },
-                        { value: '1/3', correct: false },
-                        { value: '1.75', correct: false },
-                        { value: '2', correct: false },
+                        { value: '1/3', correct: false }
                     ]
                 },
                 {
@@ -38,9 +34,7 @@ export default {
                         { value: '1/5', correct: false },
                         { value: '2.33', correct: true },
                         { value: '3.25', correct: false },
-                        { value: '1/3', correct: false },
-                        { value: '1.75', correct: false },
-                        { value: '2', correct: false },
+                        { value: '1/3', correct: false }
                     ]
                 },
                 {
