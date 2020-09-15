@@ -14,9 +14,9 @@
   </v-container>
 </template>
 <script>
-import LeftSide from "@/components/dashboards/sides/left/Teacher"
-import CenterSide from "@/components/dashboards/sides/center/Teacher"
-import RightSide from "@/components/dashboards/sides/right/Teacher"
+import LeftSide from "@/components/dashboards/sides/teacher/Left"
+import CenterSide from "@/components/dashboards/sides/teacher/Center"
+import RightSide from "@/components/dashboards/sides/teacher/Right"
 export default {
     components: {
         LeftSide,

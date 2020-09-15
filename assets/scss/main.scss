@@ -9,3 +9,25 @@
 .fade-leave-to {
     opacity: 0
 }
+
+.slick-slide {
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+  .slick-prev:before {
+    font-size: 30px;
+  }
+  
+  .slick-next:before {
+    font-size: 30px;
+  }
+
+  .v-application a.nav-active{
+    color: black;
+    font-weight: bold;
+}
+
+header.nav .v-toolbar__content {
+    justify-content: space-between;
+  }
+  
