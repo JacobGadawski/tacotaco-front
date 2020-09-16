@@ -1,7 +1,7 @@
 <template>
     <v-card elevation="0">
         <v-card-title>
-            Students online: 
+            {{label}}
         </v-card-title>
         <v-card-text>
             <v-tooltip bottom v-for="(user, i) in users" :key="i">
@@ -28,6 +28,11 @@ export default {
             type: Array,
             required: true,
             default: []
+        },
+        label: {
+            type: String,
+            required: true,
+            default: ""
         }
     },
     data(){

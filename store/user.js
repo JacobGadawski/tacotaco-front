@@ -1,5 +1,5 @@
 export const state = () => ({
-    type: "teacher"
+    type: "student"
   })
 
 export const mutations = {

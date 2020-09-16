@@ -1,6 +1,6 @@
 <template>
     <div>
-        <StudentsOnline :users="students" label="Students online:"/>
+        <StudentsOnline :users="students" label="Who is online" />
         <Classrooms :items="classrooms"/>
     </div>
 </template>

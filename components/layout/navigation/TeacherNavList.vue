@@ -3,7 +3,7 @@
     <v-list-item-group v-model="item" color="primary" class="d-flex">
       <v-list-item :to="{ name: 'index' }" exact active-class="nav-active">
         <v-list-item-content>
-          <v-icon>mdi-home-variant-outline</v-icon>
+          <v-icon>mdi-home</v-icon>
         </v-list-item-content>
       </v-list-item>
       <v-list-item
