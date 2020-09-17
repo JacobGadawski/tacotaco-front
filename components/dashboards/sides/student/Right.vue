@@ -1,11 +1,17 @@
 <template>
-    <Tools />
+    <div>
+        <Homework class="mb-4"/>
+        <Grades />
+    </div>
 </template>
 <script>
-import Tools from "@/components/tools/Tools"
+import Homework from "@/components/homework/Homework"
+import Grades from "@/components/grades/Grades"
+
 export default {
     components: {
-        Tools
+        Homework,
+        Grades
     },
     data(){
         return {

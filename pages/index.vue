@@ -1,5 +1,7 @@
 <template>
   <TeacherDashboard v-if="userType === 'teacher'"/>
+  <StudentDashboard v-else-if="userType === 'student'"/>
+  <div v-else>else</div>
 </template>
 
 <script>
@@ -8,7 +10,8 @@ import TeacherDashboard from "@/components/dashboards/Teacher"
 import StudentDashboard from "@/components/dashboards/Student"
 export default {
   components: {
-    TeacherDashboard
+    TeacherDashboard,
+    StudentDashboard
   },
   computed: {
     ...mapGetters({

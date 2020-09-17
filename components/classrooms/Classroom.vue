@@ -1,10 +1,11 @@
 <template>
     <div class="classrom d-flex pa-3 mb-4 align-center justify-center">
-        <span class="">{{name}} with Grade {{ grade }}</span>
+        <span v-if="!teacher">{{name}} with Grade {{ grade }}</span>
+        <span v-else>{{ name }} with {{ teacher }} </span>
         <v-spacer></v-spacer>
         <div class="classrom-container d-flex align-center justify-center">
             <span>{{time}}</span>
-            <v-btn icon>
+            <v-btn icon @click="goToClassroom(id)">
               <v-icon>mdi-arrow-right</v-icon>
             </v-btn>
         </div>
@@ -13,6 +14,10 @@
 <script>
 export default {
     props: {
+        id: {
+            type: Number,
+            required: true
+        },
         name: {
             type: String,
             required: true
@@ -24,6 +29,15 @@ export default {
         time: {
             type: String,
             required: true
+        },
+        teacher: {
+            type: String,
+            required: false
+        }
+    },
+    methods: {
+        goToClassroom( id ){
+            this.$router.push( { name: "classroom-id", params: { id } } )
         }
     }
 }

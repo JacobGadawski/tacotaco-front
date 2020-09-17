@@ -4,7 +4,7 @@
             Classrooms
         </v-card-title>
         <v-card-text>
-            <Classroom  v-for="(classroom, i) in items" :key="i" :name="classroom.name" :grade="classroom.grade" :time="classroom.time" />
+            <Classroom  v-for="(classroom, i) in items" :key="i" :name="classroom.name" :grade="classroom.grade" :time="classroom.time" :id="classroom.id" :teacher="classroom.teacher" />
         </v-card-text>
     </v-card>
 </template>

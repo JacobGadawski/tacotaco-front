@@ -1,7 +1,7 @@
 <template>
   <v-list elevation="0" flat color="transparent">
     <v-list-item-group v-model="item" color="primary" class="d-flex">
-      <v-list-item :to="{ name: 'index' }" exact active-class="nav-active">
+      <v-list-item :to="{ name: 'index' }" active-class="nav-active">
         <v-list-item-content>
           <v-icon>mdi-home</v-icon>
         </v-list-item-content>
@@ -25,6 +25,7 @@
 export default {
     data(){
         return {
+            item: 1,
             items: [
                 { text: "Homework", disabled: true },
                 { text: "Attendance", disabled: true },

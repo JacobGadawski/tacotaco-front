@@ -9,7 +9,7 @@
                     <v-avatar 
                         color="#ffc107"
                         size="52"
-                        class="mr-2"
+                        class="mr-2 mb-2"
                         v-on="on"
                         v-bind="attrs"
                     >

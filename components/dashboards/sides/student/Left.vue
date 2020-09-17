@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Table :title="'Monthly Leadersboard'" :items="students" :keys="[ 'name', 'points' ]" :unit="'%'" />
+        <Table :title="'Monthly Leadersboard'" :items="students" :keys="[ 'name', 'points' ]" :unit="'pkt'" />
         <Table :title="'Champion Team'" :items="teams" :keys="[ 'name', 'points' ]" :unit="'pkt'" />
     </div>
 </template>
