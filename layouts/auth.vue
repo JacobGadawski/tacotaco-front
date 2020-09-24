@@ -11,5 +11,11 @@
     props: {
       source: String,
     },
+    mounted(){
+      console.log( this.$nuxtSocket({
+        name: 'home',
+        path: '/socket.io'
+      }) )
+    }
   }
 </script>

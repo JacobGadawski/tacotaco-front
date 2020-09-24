@@ -1,6 +1,6 @@
 <template>
     <div>
-        <StudentsOnline :users="students" label="Who is online" />
+        <StudentsOnline :users="onlineUsers" label="Who is online" />
         <Classrooms :items="classrooms"/>
     </div>
 </template>
@@ -14,23 +14,18 @@ export default {
     },
     data(){
         return {
-            students: [
-                { name: "Tony Leader", performance: "95", points: 1899, champion: false },
-                { name: "Benjamin Davids", performance: "75", points: 1204, champion: false },
-                { name: "Jane Nany", performance: "35", points: 954, champion: false },
-                { name: "Johny Jody", performance: "15", points: 819, champion: false },
-                { name: "Tony Davids", performance: "95", points: 1899, champion: false },
-                { name: "Benjamin Nany", performance: "75", points: 1204, champion: false },
-                { name: "Jane Leader", performance: "35", points: 954, champion: false },
-                { name: "Johny Nany", performance: "15", points: 819, champion: false },
-            ],
             classrooms: [
-                { id: 1, grade: 1,  name: 'Mathematics', time: '9:00am', teacher: "John Boe" },
-                { id: 2, grade: 2,  name: 'Physics', time: '10:00am', teacher: "John Boe"},
-                { id: 3, grade: 3,  name: 'Mathematics', time: '10:50am', teacher: "John Boe"},
-                { id: 4, grade: 4,  name: 'Physics', time: '1:00pm', teacher: "John Boe"},
-                { id: 5, grade: 5,  name: 'Mathematics', time: '2:15pm', teacher: "John Boe"}
-            ]
+            ],
+            onlineUsers: [],
+        }
+    },
+    async mounted(){
+        try {
+            const { users } = await this.$tacoClient.users.listActive()
+            this.onlineUsers = users
+            this.classrooms = await this.$tacoClient.classrooms.list()
+        } catch (error) {
+            throw error
         }
     }
 }

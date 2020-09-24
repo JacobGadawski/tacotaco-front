@@ -24,18 +24,27 @@ export default {
     quizes: {
       type: Array,
       required: true
+    },
+    show: {
+      type: Number,
+      default: 5
     }
   },
   components: {
     Quiz
   },
-  data() {
-    return {
-      slickOptions: {
-        slidesToShow: 5,
+  computed: {
+    slickOptions(){
+      return {
+        slidesToShow: this.show,
         stagePadding: 50,
         arrows: true
       }
+    }
+  },
+  data() {
+    return {
+      
     };
   }
 };

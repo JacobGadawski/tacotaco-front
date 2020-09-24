@@ -25,17 +25,7 @@ export default {
     },
     data(){
         return {
-            students: [
-                { name: "Tony Leader", performance: "95", points: 899, champion: false },
-                { name: "Benjamin Davids", performance: "75", points: 899, champion: false },
-                { name: "Jane Nany", performance: "35", points: 899, champion: false },
-                { name: "Johny Jody", performance: "15", points: 899, champion: false },
-            ],
-            teams: [
-                { name: "Red dragon", points: 1289 },
-                { name: "Blue Whales", points: 1123 },
-                { name: "Dark Phoenix", points: 985 },
-            ],
+            
         }
     }
 }

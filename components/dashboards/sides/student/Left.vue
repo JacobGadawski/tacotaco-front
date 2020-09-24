@@ -1,6 +1,7 @@
 <template>
     <div>
-        <Table :title="'Monthly Leadersboard'" :items="students" :keys="[ 'name', 'points' ]" :unit="'pkt'" />
+        <Table :title="'Monthly Leadersboard'" :items="leadersboard" :keys="[ 'first_name', 'last_name', 'score' ]" :unit="'pkt'" :max="5" />
+        <!-- <Table :title="'Champion Team'" :items="teams" :keys="[ 'name', 'points' ]" :unit="'pkt'" /> -->
         <Table :title="'Champion Team'" :items="teams" :keys="[ 'name', 'points' ]" :unit="'pkt'" />
     </div>
 </template>
@@ -20,6 +21,19 @@ export default {
                 { name: "Blue Whales", points: 1123 },
                 { name: "Dark Phoenix", points: 985 },
             ],
+            leadersboard: []
+        }
+    },
+    methods:{
+        async fetchLeadersBoard(){
+            this.leadersboard = await this.$tacoClient.leadersboard();
+        }
+    },
+     async mounted(){
+        try {
+            await this.fetchLeadersBoard();
+        } catch (error) {
+            throw error
         }
     }
 }

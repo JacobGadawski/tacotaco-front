@@ -12,7 +12,11 @@
     </div>
 </template>
 <script>
+import Loader from '@/components/loader/Loader'
 export default {
+    components: {
+        Loader
+    },
     props: {
         id: {
             type: Number,

@@ -21,6 +21,7 @@
 import Navigation from '@/components/layout/Navigation'
 import AccountDrawer from '@/components/layout/AccountDrawer'
 export default {
+  middleware: 'auth',
   components: {
     Navigation,
     AccountDrawer

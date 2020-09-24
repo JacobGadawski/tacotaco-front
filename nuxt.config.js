@@ -6,6 +6,7 @@ export default {
   ** See https://nuxtjs.org/api/configuration-mode
   */
   mode: 'spa',
+  debug: true,
   /*
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
@@ -39,7 +40,9 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    { src: './plugins/slick-carousel.js', ssr: false }
+    { src: './plugins/slick-carousel.js', ssr: false },
+    { src: './plugins/tacoClient.js', ssr: false },
+    { src: '~/plugins/axios'}
   ],
   /*
   ** Auto import components
@@ -58,12 +61,16 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    'nuxt-socket-io',
+    'vue-web-cam/nuxt'
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {},
+  axios: {
+    baseURL: 'http://play.tacotacoapp.com:5001/api/v1'
+  },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
@@ -78,6 +85,12 @@ export default {
         }
       }
     }
+  },
+  io: {
+    sockets: [
+      // { url: 'http://40.79.77.240:5001' },
+      { url: 'http://play.tacotacoapp.com:5001' }
+    ]
   },
   /*
   ** Build configuration
